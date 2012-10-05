@@ -2,14 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.scala-tools.archetypes</groupId>
-  <artifactId>scala-archetype-simple</artifactId>
-  <version>1.4-SNAPSHOT</version>
+  <artifactId>scala-maven-template</artifactId>
+  <version>1.0</version>
   <packaging>maven-archetype</packaging>
 
-  <name>Archetype - scala-archetype-simple</name>
+  <name>scala-maven-template</name>
   <url>http://scala-tools.org/mvnsites/${project.artifactId}</url>
-  <!--url>http://github.com/davidB/${project.artifactId}</url -->
-  <description>The maven-scala-plugin is used for compiling/testing/running/documenting scala code in maven.</description>
+  <!--url>http://github.com/shairontoledo/${project.artifactId}</url -->
+  <description>
+    The scala-maven-template is used for compiling/testing/running/documenting scala code in maven.
+    Maven template project with common used librares based on https://github.com/davidB/scala-archetype-simple by David Bernarde.
+  </description>
   <inceptionYear>2010</inceptionYear>
   <organization>
     <name>Scala Tools</name>
@@ -24,23 +27,15 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git://github.com/davidB/${project.artifactId}.git</connection>
-    <!--developerConnection>scm:git:git@github.com:davidB/${project.artifactId}.git</developerConnection-->
-    <url>git@github.com:davidB/${project.artifactId}.git</url>
+    <connection>scm:git:git://github.com/shairontoledo/${project.artifactId}.git</connection>
+    <!--developerConnection>scm:git:git@github.com:shairontoledo/${project.artifactId}.git</developerConnection-->
+    <url>git@github.com:shairontoledo/${project.artifactId}.git</url>
   </scm>
 
   <issueManagement>
     <system>github</system>
-    <url>http://github.com/davidB/${project.artifactId}/issues</url>
+    <url>http://github.com/shairontoledo/${project.artifactId}/issues</url>
   </issueManagement>
-
-  <mailingLists>
-    <mailingList>
-      <name>maven-and-scala</name>
-      <archive>http://groups.google.com/group/maven-and-scala</archive>
-      <post>http://groups.google.com/group/maven-and-scala</post>
-    </mailingList>
-  </mailingLists>
 
   <distributionManagement>
     <repository>
@@ -52,16 +47,22 @@
       <url>http://nexus-direct.scala-tools.org/content/repositories/snapshots</url>
       <uniqueVersion>false</uniqueVersion>
     </snapshotRepository>
-    <!--site>
-      <id>scala-tools.org</id>
-      <url>dav:http://nexus-direct.scala-tools.org/content/sites/mvnsites/${project.artifactId}</url>
-    </site-->
   </distributionManagement>
 
   <developers>
     <developer>
       <name>David Bernard</name>
       <timezone>+1</timezone>
+      <roles>
+        <role>Author</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Shairon Toledo</name>
+      <timezone>+1</timezone>
+      <roles>
+        <role>Cloner</role>
+      </roles>
     </developer>
   </developers>
 
@@ -93,6 +94,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-invoker-plugin</artifactId>
+        <version>1.7</version>
         <executions>
           <execution>
             <id>integration-test</id>
